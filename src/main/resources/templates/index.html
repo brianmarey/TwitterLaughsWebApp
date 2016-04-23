@@ -25,21 +25,27 @@
                 	<div class="span12 text-center">
                         <div class="page-header">
                             <h1>Twitter Laughs</h1>
-                            <div style="font-size:14pt">Here are the funniest jokes from the last couple of days.</div><br />
+                            <div style="font-size:14pt">Here are the most popular jokes from the last couple of days.</div><br />
                         </div>                        
                     </div>
     			</div>
-    			<div th:class="row" th:each="tweet : ${tweets}">
-    				<div class="span4 offset4 text-center" style="margin-bottom:80px">
-                		<div th:utext="${tweet}">embed</div>
-                	</div>
-      			</div>            	
+    			<div id="jokesArea">
+    				<div class="row">
+    					<div class="span12 text-center">
+    						<div style="color:black;font-size:14pt;margin-bottom:25px">Loading...</div>
+    						<div><img src="./images/infinity.gif"/></div>
+    					</div>
+    				</div>
+    			</div>           	
 			</div>
 		</div>
 	</div>
 
 
 <div th:include="fragments/footer :: footer">...</div>
+<script>
+$( "#jokesArea" ).load( "./jokes"); 
+</script>
 </body>
 
 </html>
